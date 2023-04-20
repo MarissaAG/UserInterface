@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public Button restartButton;
     public GameObject TitleScreen;
+    public TextMeshProUGUI livesText;
+    private int lives;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         isGameActive = true;
         TitleScreen.gameObject.SetActive(false);
+        UpdateLives(3);
     }
 
     IEnumerator SpawnTarget()
@@ -60,4 +63,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void UpdateLives(int livesToChange)
+    {
+        lives += livesToChange;
+        livesText.text = "Lives: " + lives;
+        if (lives <= 0)
+        {
+            GameOver(); 
+        }
+    }
+
 }
