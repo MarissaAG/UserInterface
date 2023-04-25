@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (!paused)
         {
             paused = true;
-            pauseScreen.SetActive(false);
+            pauseScreen.SetActive(true);
             Time.timeScale = 0;
         }
         else
