@@ -8,7 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
-    private float spawmRate = 1.0f;
+    private float spawnRate = 1.0f;
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(int difficulty)
     {
-        spawmRate /= difficulty;
+        spawnRate /= difficulty;
         StartCoroutine(SpawnTarget());
         score = 0;
         UpdateScore(0);
