@@ -25,7 +25,7 @@ public class GameManagerX : MonoBehaviour
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
     public void StartGame()
     {
-        spawnRate /= difficulty;
+        spawnRate /= 1.5f;
         isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
